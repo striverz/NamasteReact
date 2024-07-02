@@ -61,3 +61,6 @@ Production mode is optimized for deploying your React application in a productio
 * `Smaller Bundle Size`: The JavaScript bundle generated in production mode is smaller, reducing load times for your users.
 
 * `Minification and Compression`: In production mode, your code is minified and compressed, further reducing bundle size
+
+# 7. What is async and defer? 
+# 8. What is crossorigin in script tag?
