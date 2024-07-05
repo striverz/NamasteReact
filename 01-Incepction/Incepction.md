@@ -104,4 +104,6 @@ This attribute is useful for scripts that need the DOM to be fully loaded before
 
 ```<script src="script.js" defer></script>```
 
+<img src="https://media.licdn.com/dms/image/D5612AQEYCnsZ1f9GFQ/article-cover_image-shrink_600_2000/0/1699370054733?e=2147483647&v=beta&t=MeKuUXk5QMblVoausf5p3swTkBCICOHoRsijQqMfxZE">
+
 # 8. What is crossorigin in script tag?
