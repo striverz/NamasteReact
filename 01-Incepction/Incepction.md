@@ -66,7 +66,7 @@ Production mode is optimized for deploying your React application in a productio
 
 The <script> tag in HTML is used to include JavaScript code on a webpage. There are different ways to include scripts using this tag, and the behavior of how the script is loaded and executed can vary depending on the attributes used. The primary attributes that affect this behavior are async and defer.
 
-`Normal <script> Tag` <br>
+# `Normal <script> Tag` <br>
 
 When you include a script without any attributes, the browser will:
 Stop parsing the HTML document.
@@ -80,7 +80,7 @@ This can block the rendering of the page, making it slower for users to see the 
 <script src="script.js"></script>
 ```
 
-`<script> Tag with async` <br>
+# `<script> Tag with async` <br>
 
 When you use the async attribute:
 
@@ -93,7 +93,7 @@ This attribute is best used for scripts that do not depend on other scripts or t
 ```<script src="script.js" async></script>```
 
 
-`<script> Tag with defer` <br>
+# `<script> Tag with defer` <br>
 When you use the defer attribute:
 
 The browser fetches the script in parallel with parsing the HTML document.
