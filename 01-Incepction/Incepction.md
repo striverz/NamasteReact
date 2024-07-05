@@ -63,4 +63,44 @@ Production mode is optimized for deploying your React application in a productio
 * `Minification and Compression`: In production mode, your code is minified and compressed, further reducing bundle size
 
 # 7. What is async and defer? 
+
+The <script> tag in HTML is used to include JavaScript code on a webpage. There are different ways to include scripts using this tag, and the behavior of how the script is loaded and executed can vary depending on the attributes used. The primary attributes that affect this behavior are async and defer.
+
+`Normal <script> Tag`
+When you include a script without any attributes, the browser will:
+Stop parsing the HTML document.
+Fetch the script.
+Execute the script.
+Resume parsing the HTML document after the script has been executed.
+This can block the rendering of the page, making it slower for users to see the content.
+
+
+```
+<script src="script.js"></script>
+```
+
+`<script> Tag with async`
+
+When you use the async attribute:
+
+The browser fetches the script in parallel with parsing the HTML document.
+Once the script is fetched, it is executed immediately.
+HTML parsing is paused during the execution of the script and resumes after it finishes.
+This attribute is best used for scripts that do not depend on other scripts or the DOM being fully loaded.
+
+
+```<script src="script.js" async></script>```
+
+
+`<script> Tag with defer`
+When you use the defer attribute:
+
+The browser fetches the script in parallel with parsing the HTML document.
+The script is executed only after the HTML document has been fully parsed.
+The scripts with the defer attribute are executed in the order they appear in the document.
+This attribute is useful for scripts that need the DOM to be fully loaded before they run.
+
+
+```<script src="script.js" defer></script>```
+
 # 8. What is crossorigin in script tag?
