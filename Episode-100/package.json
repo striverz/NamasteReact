@@ -1,0 +1,11 @@
+{
+  "name": "episode-100",
+  "version": "1.0.0",
+  "description": "namaste react by akshy",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Manikanta Korimilli",
+  "license": "ISC"
+}
