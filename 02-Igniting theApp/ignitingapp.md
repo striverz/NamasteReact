@@ -1,6 +1,49 @@
 # What is `NPM`?
+npm is the world's largest software registry, hosting millions of packages. it is like a node package manager  [npm link](https://www.npmjs.com/)
 
-### [npm](https://www.npmjs.com/)
+``` 🛠️ How NPM Works: A Step-by-Step Guide 🚀 ```
+
+1.Project Initialization: Developers kickstart a new project by running npm init in the project directory. This command generates a package.json file that acts as a manifest for the project, containing metadata and dependency information.
+
+` npm init `
+
+2.Developers specify these dependencies in the package.json file and install them using the npm install command.
+
+` npm install lodash `
+3.NPM automatically creates a node_modules directory where it stores the installed packages. These dependencies are recorded in the package.json file under the dependencies section.
+
+```
+"dependencies": {
+  "lodash": "^4.17.21"
+}
+```
+4.NPM uses semantic versioning to define package versions. Developers can specify version ranges in the package.json file to allow for flexibility in updating packages.
+
+```
+"dependencies": {
+  "lodash": "^4.17.21"
+}
+
+```
+5.The package-lock.json file provides specific version information for each package that is currently being used in a project.
+
+```
+{
+  "name": "my-blog",
+  "version": "1.0.0",
+  "lockfileVersion": 2,
+  "dependencies": {
+    "lodash": {
+      "version": "4.17.21",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz",
+      "integrity": "sha512-...
+      "dev": true
+    }
+  }
+}
+```
+
+
 
 
 ● - What is `Parcel/Webpack`? Why do we need it?
