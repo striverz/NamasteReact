@@ -62,13 +62,22 @@ It is simply an NPM package runner. It allows developers to execute any Javascri
 
 ● - What is difference between `dependencies` vs `devDependencies`
 
-● - What is Tree Shaking?
+# What is Tree Shaking?
+Tree shaking refers to dead code elimination. It means that unused modules will not be included in the bundle during the build process.
+
+When we import and export modules in JavaScript, most of the time there is unused code floating around. Excluding that unused code (also referred as dead code) is called tree shaking.
+
+Utilizing the tree shaking and dead code elimination can significantly reduce the code size we have in our application. The less code we send over the wire the more performant the application will be.
+
+<img src="https://i.sstatic.net/xtD74.png">
+
+<img src="https://i.sstatic.net/VAVeB.png">
 
 ● - What is Hot Module Replacement?
 
 ● - List down your favourite 5 superpowers of Parcel and describe any 3 of them in your own words?
 
-● - What is `.gitignore`? What should we add and not add into it?
+# What is `.gitignore`? What should we add and not add into it?
 A .gitignore file tells Git which files (or patterns) it should ignore and not track. This is useful to prevent certain files from being added to version control, which can help reduce repository size and avoid committing sensitive or unnecessary files.
 
 The files which are re-generate with our existing code are mostly not added to out code like 
@@ -77,7 +86,7 @@ dist/
 .parcel_cache
 
 
-● - What is the difference between `package.json` and `package-lock.json`
+# What is the difference between `package.json` and `package-lock.json`
 `package.json`
 Purpose: It is the primary configuration file for a Node.js project. It defines project metadata, dependencies, and scripts.
 
@@ -105,13 +114,32 @@ Content:
 
 ```
 
-● - Why should I not modify `package-lock.json`?
+# Why should I not modify `package-lock.json`?
 
-● - What is `node_modules` ? Is it a good idea to push that on git?
+# What is `node_modules` ? Is it a good idea to push that on git?
+node_modules is a folder which stores external dependencies of the project. Whenever we install some external package through “npm” or “yarn” in a project locally, it gets stored into the node_modules folder located at the root of the project directory by default. It is not a idea to put in git because 
+- it is very large in size
+- it is regenerative module(with the information of package.json and package-lock.json we can again install node_modules by using the command `npm install`) 
+- so,it not good idea to push into the git
 
-● - What is the `dist` folder?
+# What is the `dist` folder?
+The dist folder is often used to store the final output of your build process. This includes the compiled, minified, or otherwise processed files that are ready for `distribution` or `deployment`.
 
-● - What is `browserlists`
+# What is `browserlists`
+browserslist allows you to specify which browsers your project should support. This helps ensure that your code is compatible with the browsers used by your target audience and can be optimized accordingly.
+
+### Example package.json Configuration
+```
+{
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ]
+}
+
+```
 
 Read about dif bundlers: vite, webpack, parcel
 
