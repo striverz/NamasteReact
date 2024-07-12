@@ -99,7 +99,7 @@ To summarize, `dependencies` includes packages needed for the application to run
 
 
 
-# What is Tree Shaking?
+# What is `Tree Shaking`?
 Tree shaking refers to dead code elimination. It means that unused modules will not be included in the bundle during the build process.
 
 When we import and export modules in JavaScript, most of the time there is unused code floating around. Excluding that unused code (also referred as dead code) is called tree shaking.
@@ -110,7 +110,7 @@ Utilizing the tree shaking and dead code elimination can significantly reduce th
 
 <img src="https://i.sstatic.net/VAVeB.png">
 
-# What is Hot Module Replacement?
+# What is `Hot Module Replacement`?
 Hot Module Replacement (or HMR) is one of the most useful features offered by webpack. It allows all kinds of modules to be updated at runtime without the need for a full refresh
 
 ● - List down your favourite 5 superpowers of Parcel and describe any 3 of them in your own words?
