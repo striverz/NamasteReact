@@ -153,6 +153,7 @@ Content:
 ```
 
 # Why should I not modify `package-lock.json`?
+Consistency Issues: The package-lock.json file ensures that everyone working on the project uses the same versions of dependencies. If you modify it manually, you risk introducing inconsistencies between different environments or developers.
 
 # What is `node_modules` ? Is it a good idea to push that on git?
 node_modules is a folder which stores external dependencies of the project. Whenever we install some external package through “npm” or “yarn” in a project locally, it gets stored into the node_modules folder located at the root of the project directory by default. It is not a idea to put in git because 
