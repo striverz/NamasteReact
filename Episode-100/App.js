@@ -2,23 +2,33 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 
-const heading=<h1>React Element</h1>;
-
-const Title=()=>{
+const Header=()=>{
     return(
-        <h1>Namaste React🚀 </h1>
+        <div className="header">
+            <div className="logo-container">
+                  <a href="/"><img alt="logo" className="logo" src="https://logocreator.io/wp-content/uploads/2024/01/food-logo-ideas-3.png"></img></a>
+            </div>
+            <div className="nav-items-container">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Cart</li>
+                </ul>
+
+            </div>
+            
+        </div>
+
     )
 }
-const HeaderComponent =()=>{
-    return  (
-        <>
-            <h1>React Functional component</h1>
-            {heading}
-            <Title/>
-        </>
+const App=()=>{
+    return(
+        <div className="app">
+            <Header/>
+        </div>
     )
-    
 }
 
 const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeaderComponent/>);
+root.render(<App/>);

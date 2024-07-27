@@ -1,0 +1,30 @@
+.header{
+    border: solid black 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 530;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 90px;
+
+}
+.nav-items-container >ul{
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+}
+.nav-items-container >ul>li{
+    margin-right: 20px;
+    padding: 7px;
+    background-color: none !important;
+    border-radius: 10px;
+}
+.nav-items-container>ul>li:hover{
+    background-color: orange;
+    cursor: pointer;
+    transition: 0.2s;
+}
