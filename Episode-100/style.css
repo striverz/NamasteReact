@@ -61,7 +61,6 @@
     border-radius: 15px;
 }
 .res-card:hover{
-    
     cursor: pointer;
     transform: scale(0.95,0.95);
 }
