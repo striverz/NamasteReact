@@ -22,10 +22,50 @@ const Header=()=>{
 
     )
 }
+const RestaurantCard=()=>{
+    return(
+        <div className="res-card"> 
+         <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/0adf25c57357161b20c11281d8a443e6"></img>
+         <h2>Veg-Samosa</h2>
+         <h6>India,african,european,russian</h6>
+         <h3>Rating 4.5</h3>
+
+        </div>
+    )
+}
+const Body=()=>{
+    return(
+        <div className="body">
+            <div className="search-function"> 
+                <input type="text" value="Search for..."></input>
+                <button>Submit</button>
+            </div>
+            <div className="card-container">
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+                   <RestaurantCard/>
+            </div>
+
+        </div>
+    )
+}
 const App=()=>{
     return(
         <div className="app">
             <Header/>
+            <Body/>
         </div>
     )
 }
