@@ -12,7 +12,7 @@ const Body=()=>{
                 <button className="top-btn"
                 onClick={()=>{
                     console.log("Btn clicked");
-                   const data=list.filter((res)=>res.info.avgRating>4.3);
+                   const data=list.filter((res)=>res.info.avgRating===4.3);
                    setList(data);
                 }}>
                     Top Res
