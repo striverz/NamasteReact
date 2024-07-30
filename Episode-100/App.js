@@ -99,7 +99,7 @@ const Body=()=>{
     return(
         <div className="body">
             <div className="search-function"> 
-                <input type="text" value="Search for..."></input>
+                <input type="text"></input>
                 <button>Submit</button>
             </div>
             <div className="card-container">
