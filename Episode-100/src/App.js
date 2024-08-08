@@ -11,9 +11,7 @@ const App=()=>{
             <Body/>
         </div>
     )
-    {
-        // ok
-    }
+    
 }
 
 const root=ReactDOM.createRoot(document.getElementById("root"));
