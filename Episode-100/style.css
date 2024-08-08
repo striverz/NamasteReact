@@ -87,3 +87,11 @@
     cursor: pointer;  
    
 }
+
+.search-function{
+    display: flex;
+    
+}
+.toprating-btn{
+    margin-left: 10px;
+}
