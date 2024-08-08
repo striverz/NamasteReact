@@ -2,6 +2,7 @@
 import RestaurantCard from "./RestaurantCard"
 import {useState,useEffect} from "react"
 import { RESTAURANT_API } from "../utils/constants"
+import ShimmerUI from "./ShimmerUI"
 
 const Body=()=>{
 
@@ -22,7 +23,10 @@ const Body=()=>{
 
     }
 
-    return(
+    //Conditional Rendering :)
+    return (restaurants.length===0) ? <ShimmerUI/> :(
+
+     (
         <div className="body">
             <div className="search-function"> 
                 <input type="text"></input>
@@ -46,6 +50,6 @@ const Body=()=>{
             </div>
 
         </div>
-    )
+    ) );
 }
 export default Body;
