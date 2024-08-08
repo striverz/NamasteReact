@@ -1,13 +1,14 @@
 {
   "name": "episode-100",
   "version": "1.0.0",
-  
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "parcel index.html",
+    "start": "parcel index.html",
     "build": "parcel build index.html"
   },
-  "author": "Manikanta Korimilli",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
@@ -17,8 +18,5 @@
   },
   "devDependencies": {
     "process": "^0.11.10"
-  },
-  "browserslist":[
-    "last 10 versions"
-  ]
+  }
 }
