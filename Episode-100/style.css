@@ -78,3 +78,12 @@
     border-radius: 10px;
 
 }
+.login-btn{
+    background-color: green;
+    border: none;
+    padding: 0px 20px;
+    margin-right: 5px;
+    border-radius: 10px;
+    cursor: pointer;  
+   
+}
