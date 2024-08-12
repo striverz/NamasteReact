@@ -71,3 +71,35 @@ Use Cases
 
 * Accessing data from APIs that may not always return a fully populated object.
 Working with deeply nested data structures where some properties may be optional or missing.
+
+# What is ShimmerUI?
+<img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*VN-Fijz8nHBcl9hs6kCeUw.gif">
+
+Shimmer UI refers to a design pattern or effect used in user interfaces to indicate that content is loading. It's often seen as a placeholder animation that mimics the look of a gradient or light moving across a surface, usually in the shape of the content that is being loaded, such as text, images, or other UI elements. The purpose of the shimmer effect is to provide a visual cue that something is happening in the background, improving the user experience by reducing perceived loading times.
+
+# What is conditional Rendering?
+Conditional rendering in JavaScript, particularly in frameworks like React, refers to the process of rendering different components or elements based on certain conditions.
+```
+import React from 'react';
+
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+
+  // Conditional Rendering using if-else
+  if (isLoggedIn) {
+    return <h1>Welcome back!</h1>;
+  } else {
+    return <h1>Please sign up.</h1>;
+  }
+}
+
+function App() {
+  return (
+    <div>
+      <Greeting isLoggedIn={true} /> {/* Change this to false to see the other message */}
+    </div>
+  );
+}
+
+export default App;
+```
