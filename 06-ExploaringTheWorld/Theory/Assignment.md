@@ -1,4 +1,4 @@
-# What is a Microservice?
+# What is the difference between Monolith and Microservice?
 <img src="https://src.n-ix.com/uploads/2022/12/22/1d3487fc-2caf-4985-bbb6-1257091561cf.png">
 
 ## Monolithic Architecture:
@@ -40,3 +40,34 @@ In a microservices architecture, an application is broken down into smaller, ind
 `Deployment Overhead`: Managing and deploying many services can require sophisticated tooling and orchestration.
 
 <img src="https://d1.awsstatic.com/Developer%20Marketing/containers/monolith_1-monolith-microservices.70b547e30e30b013051d58a93a6e35e77408a2a8.png">
+
+# Why do we need a useEffect Hook?
+Optional chaining is a feature in JavaScript that allows you to safely access deeply nested properties of an object without having to manually check if each reference in the chain is valid (i.e., not null or undefined). It helps to avoid runtime errors that occur when trying to access a property of null or undefined.
+
+Syntax
+Optional chaining uses the ?. operator. Here's a basic example:
+```
+const user = {
+  profile: {
+    name: 'John Doe',
+    address: {
+      city: 'New York',
+      zip: '10001'
+    }
+  }
+};
+
+// Accessing nested properties safely with optional chaining
+const city = user?.profile?.address?.city;
+console.log(city); // Outputs: 'New York'
+
+```
+* Without optional chaining, you'd have to manually check if each property in the chain exists before accessing the next one to avoid errors.
+
+* With optional chaining, this can be done more succinctly with user?.profile?.address?.city.
+
+Use Cases
+* Optional chaining is particularly useful in scenarios such as:
+
+* Accessing data from APIs that may not always return a fully populated object.
+Working with deeply nested data structures where some properties may be optional or missing.
