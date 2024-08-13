@@ -1,9 +1,15 @@
 import { LOGO_IMG } from "../utils/constants";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const Header=()=>{
 
     const [loginBtn,setLoginBtn]=useState("Login");
+
+    useEffect(()=>{
+        console.log("useEffect Called")
+    },[])
+
+    console.log("Header rendered")
 
 
     return(

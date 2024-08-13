@@ -6,7 +6,7 @@ import ShimmerUI from "./ShimmerUI"
 
 const Body=()=>{
 
-    console.log("Rendering");
+   // console.log("Rendering");
 
     const [restaurants,setRestaurants]=useState([]);
 
@@ -28,7 +28,7 @@ const Body=()=>{
         setRestaurants(Data);
         setFilteredRestaurants(Data);
 
-        console.log(Data); 
+       // console.log(Data); 
 
     }
 
