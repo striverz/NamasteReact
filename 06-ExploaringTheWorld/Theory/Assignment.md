@@ -212,3 +212,31 @@ function App() {
 
 export default App;
 ```
+# What is CORS?
+
+[REFERENCE LINK](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+
+CORS, which stands for Cross-Origin Resource Sharing, is a security feature implemented by web browsers to control how resources (like fonts, APIs, or web pages) from one origin (domain) can be requested and accessed by a web page from a different origin. This is important because, by default, web browsers block requests made from one domain to another due to the same-origin policy for security reasons.
+
+How CORS Works:
+Same-Origin Policy: Under this policy, a web page can only request resources from the same domain, protocol, and port number. For example, if a web page is served from https://example.com, it can't access resources from https://another-domain.com without permission.
+
+CORS Headers: CORS allows servers to specify who can access their resources and how they can be accessed by using HTTP headers:
+
+`Access-Control-Allow-Origin`: Specifies which origins are allowed to access the resource. It can be a specific domain or a wildcard * to allow all domains.
+`Access-Control-Allow-Methods`: Specifies the HTTP methods (GET, POST, PUT, DELETE, etc.) allowed when accessing the resource.
+`Access-Control-Allow-Headers`: Specifies which headers can be used in the actual request.
+`Access-Control-Allow-Credentials`: Indicates whether or not the response to the request can be exposed when credentials (like cookies or HTTP authentication) are included in the request.
+
+## Example:
+If https://site-a.com wants to fetch data from an API at https://api.site-b.com, the server at api.site-b.com must include a CORS header like this:
+``` Access-Control-Allow-Origin: https://site-a.com
+```
+his tells the browser that site-a.com is allowed to access the resource at api.site-b.com.
+
+CORS is a critical aspect of web security. It helps prevent malicious websites from making unauthorized requests to servers, protecting sensitive data from being exposed or manipulated.
+
+## `Solve these after learning Namaste-JS(S-02)
+
+# What is async and await?
+# What is the use of `const json = await data.json();` in getRestaurants()
