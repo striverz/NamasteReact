@@ -7,10 +7,10 @@ const Header=()=>{
     const [loginBtn,setLoginBtn]=useState("Login");
 
     useEffect(()=>{
-        console.log("useEffect Called")
+        //console.log("useEffect Called")
     },[])
 
-    console.log("Header rendered")
+    //console.log("Header rendered")
 
 
     return(
