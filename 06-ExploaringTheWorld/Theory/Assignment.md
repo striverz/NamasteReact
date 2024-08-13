@@ -229,8 +229,11 @@ CORS Headers: CORS allows servers to specify who can access their resources and 
 `Access-Control-Allow-Credentials`: Indicates whether or not the response to the request can be exposed when credentials (like cookies or HTTP authentication) are included in the request.
 
 ## Example:
-If https://site-a.com wants to fetch data from an API at https://api.site-b.com, the server at api.site-b.com must include a CORS header like this:
-``` Access-Control-Allow-Origin: https://site-a.com
+If `https://site-a.com` wants to fetch data from an API at `https://api.site-b.com`, the server at api.site-b.com must include a CORS header like this:
+
+``` 
+Access-Control-Allow-Origin: https://site-a.com
+
 ```
 his tells the browser that site-a.com is allowed to access the resource at api.site-b.com.
 
