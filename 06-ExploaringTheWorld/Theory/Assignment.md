@@ -42,6 +42,112 @@ In a microservices architecture, an application is broken down into smaller, ind
 <img src="https://d1.awsstatic.com/Developer%20Marketing/containers/monolith_1-monolith-microservices.70b547e30e30b013051d58a93a6e35e77408a2a8.png">
 
 # Why do we need a useEffect Hook?
+The useEffect hook is a function in React that allows developers to perform `side effects` in a functional component. This can include things like data fetching, setting up subscriptions, responding to the component's lifecycle events, or updating the DOM in response to changes in state or props.
+
+The useEffect react hook is called after every render and takes a callback function as an argument, which contains the code for the side effect. This allows for a cleaner and more declarative approach to managing side effects in functional components.
+
+In the useEffect hook in React, the dependency array is an optional argument that you can pass to the hook. This array should contain a list of values that the hook depends on, and the hook will only be executed if one of these values changes.
+
+In the useEffect hook in React, an empty array can be passed as the second argument to indicate that the hook does not have any dependencies. This means that the hook will only be executed once when the component is initially rendered.
+
+## `Syntax`:
+```
+// 1. import useEffect
+import { useEffect } from 'react';
+
+const MyComponent=()=> {
+  // 2. call it above the returned JSX  
+  // 3. pass two arguments to it: a function and an dependency array
+  useEffect(() => {}, []);
+  
+  // return ...
+}
+```
+
+### Example of useEffect for fetching the data
+```
+
+import React, { useState, useEffect } from 'react';
+
+function MyComponent() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch('https://my-api.com/data')
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, []);
+
+  return (
+    // component JSX goes here
+  );
+
+```
+# SideEffects in programming?
+A side effect occurs when a function or program performs an action that goes beyond simply returning a value. This action might involve changing the program's state, interacting with external systems, or causing observable effects in the environment outside the function.
+
+### Example 1: Modifying a Global Variable
+In this example, we have a function that increments a global variable. The function performs a side effect by altering the state of a variable that exists outside its scope.
+```
+let count = 0; // Global variable
+
+function incrementCount() {
+  count += 1; // Side effect: modifying a global variable
+  return count;
+}
+
+console.log(incrementCount()); // 1
+console.log(incrementCount()); // 2
+```
+Here, incrementCount is not a pure function because it modifies the global variable count, which is a side effect. The function's behavior depends on and alters an external state, making it less predictable and harder to manage.
+
+
+### Example 2: Altering Function Arguments
+When a function modifies its arguments, it causes a side effect by changing the original data that was passed to it.
+```
+function addElementToArray(arr, element) {
+  arr.push(element); // Side effect: modifying the original array
+  return arr;
+}
+
+const myArray = [1, 2, 3];
+const newArray = addElementToArray(myArray, 4);
+
+console.log(myArray); // [1, 2, 3, 4]
+console.log(newArray); // [1, 2, 3, 4]
+
+```
+In this example, the addElementToArray function modifies the arr array directly. This is a side effect because the original array (myArray) is changed, which might not be expected by other parts of the code that use myArray.
+
+### Example 3: React useEffect Hook
+In React, side effects are often handled using the useEffect hook. For example, fetching data from an API or subscribing to an event are side effects.
+```
+import React, { useState, useEffect } from 'react';
+
+function FetchDataComponent() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch('https://api.example.com/data') // Side effect: fetching data from an external API
+      .then(response => response.json())
+      .then(jsonData => setData(jsonData));
+  }, []); // Empty dependency array means this side effect runs once after the initial render
+
+  return (
+    <div>
+      <h1>Data:</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
+}
+
+```
+In this React example, the useEffect hook runs after the component mounts and fetches data from an external API. Fetching data is a side effect because it involves an asynchronous operation that interacts with the outside world (the network) and updates the component's state.
+
+`Summary`:
+Side effects occur when a function or program does more than just compute and return a value—it also changes some external state or interacts with the environment. This can include modifying global variables, altering data structures, performing I/O operations, or making network requests. `While side effects are often necessary, they need to be managed carefully to avoid making the program's behavior unpredictable and difficult to maintain`.
+
+# What is optionalChaining?
 Optional chaining is a feature in JavaScript that allows you to safely access deeply nested properties of an object without having to manually check if each reference in the chain is valid (i.e., not null or undefined). It helps to avoid runtime errors that occur when trying to access a property of null or undefined.
 
 Syntax
