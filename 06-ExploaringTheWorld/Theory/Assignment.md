@@ -120,6 +120,9 @@ console.log(newArray); // [1, 2, 3, 4]
 In this example, the addElementToArray function modifies the arr array directly. This is a side effect because the original array (myArray) is changed, which might not be expected by other parts of the code that use myArray.
 
 ### Example 3: React useEffect Hook
+
+[FOR REFERENCE LINK](https://www.scaler.com/topics/react/useeffect/)
+
 In React, side effects are often handled using the useEffect hook. For example, fetching data from an API or subscribing to an event are side effects.
 ```
 import React, { useState, useEffect } from 'react';
