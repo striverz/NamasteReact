@@ -4,12 +4,14 @@ import {useState,useEffect} from "react"
 import { RESTAURANT_API } from "../utils/constants"
 import ShimmerUI from "./ShimmerUI"
 import { Link } from "react-router-dom"
+import useOnlineStatus from "../utils/useOnlineStatus"
+import Grocery from "./Grocery"
 
 const Body=()=>{
 
-   // console.log("Rendering");
-   console.log("Rendereing");
-   console.log(useState());
+  
+
+   const onlineStatus=useOnlineStatus();
 
 
     const [restaurants,setRestaurants]=useState([]);
@@ -30,7 +32,7 @@ const Body=()=>{
 
         const Data=json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         
-       console.log(Data);
+       //console.log(Data);
       
        setRestaurants(Data);
        setFilteredRestaurants(Data);
@@ -38,6 +40,8 @@ const Body=()=>{
        // console.log(Data); 
 
     }
+    //again using condition rendering
+    if(onlineStatus===false) return <h1>Look's like you are offline🚀 check you connection</h1>
 
     //Conditional Rendering :)
     return (restaurants?.length===0) ? <ShimmerUI/> :(
