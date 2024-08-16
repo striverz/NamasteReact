@@ -8,6 +8,9 @@ import { Link } from "react-router-dom"
 const Body=()=>{
 
    // console.log("Rendering");
+   console.log("Rendereing");
+   console.log(useState());
+
 
     const [restaurants,setRestaurants]=useState([]);
 
@@ -23,11 +26,14 @@ const Body=()=>{
 
     const fetchData= async()=>{
         const data =await fetch(RESTAURANT_API);
-        const json=await data.json();
+        const json=await data?.json();
 
         const Data=json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-        setRestaurants(Data);
-        setFilteredRestaurants(Data);
+        
+       console.log(Data);
+      
+       setRestaurants(Data);
+       setFilteredRestaurants(Data);
 
        // console.log(Data); 
 
