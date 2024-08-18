@@ -17,16 +17,26 @@ const RestaurantMenu=()=>{
 
     if(resData===null) return <ShimmerUI/>
 
-    console.log(resData);
+    const Data=resData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card?.itemCards;
+
+    console.log(Data);
 
     const {name,cloudinaryImageId}=resData?.cards[2]?.card?.card?.info;
-    console.log(name); 
+    //console.log(name); 
     return(
         <div>
             <img src={IMG_CDN+cloudinaryImageId}></img>
-            <h1>{name}</h1>
-            
+
+            {
+                Data.map((res)=>{
+                    return(
+                        <h1>{res?.card?.info?.name}</h1>
+                    )
+                })
+            }
         </div>
+
+       
     )
 }
 export default RestaurantMenu;
