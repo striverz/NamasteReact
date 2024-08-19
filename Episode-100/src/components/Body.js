@@ -7,11 +7,13 @@ import { Link } from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus"
 import Grocery from "./Grocery"
 
+
+
 const Body=()=>{
 
   
 
-   const onlineStatus=useOnlineStatus();
+    const onlineStatus=useOnlineStatus();
 
 
     const [restaurants,setRestaurants]=useState([]);
@@ -21,6 +23,8 @@ const Body=()=>{
     const [searchText, setSearchText]=useState("");
 
 
+
+    
 
     useEffect(()=>{
         fetchData();
@@ -32,12 +36,10 @@ const Body=()=>{
 
         const Data=json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         
-       //console.log(Data);
       
        setRestaurants(Data);
        setFilteredRestaurants(Data);
-
-       // console.log(Data); 
+      
 
     }
     //again using condition rendering
@@ -67,6 +69,7 @@ const Body=()=>{
 
                         setFilteredRestaurants(filteredData);
                         console.log(filteredData);
+
 
                         
                     }}

@@ -1,4 +1,9 @@
 /* The Header Css is starts from Here...! */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .header{
     border: solid black 1px;
     display: flex;
@@ -94,4 +99,13 @@
 }
 .toprating-btn{
     margin-left: 10px;
+}
+
+.accordian{
+    
+    padding: 20px;
+    margin: 5px;
+    border: solid black 1px;
+    cursor: pointer;
+    font-weight: 700;
 }

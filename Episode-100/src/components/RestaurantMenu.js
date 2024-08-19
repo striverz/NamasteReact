@@ -7,6 +7,7 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 
 
+
 const RestaurantMenu=()=>{
 
     const {resId}=useParams();
@@ -15,25 +16,27 @@ const RestaurantMenu=()=>{
 
     
 
+    
+
     if(resData===null) return <ShimmerUI/>
 
     const Data=resData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card?.itemCards;
+    const Data2=resData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
-    console.log(Data);
+    
+
+    const ItemCategory=Data2.filter((res)=>res.card.card["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    //console.log(ItemCategory);
+    
+    
 
     const {name,cloudinaryImageId}=resData?.cards[2]?.card?.card?.info;
     //console.log(name); 
     return(
         <div>
-            <img src={IMG_CDN+cloudinaryImageId}></img>
-
-            {
-                Data.map((res)=>{
-                    return(
-                        <h1>{res?.card?.info?.name}</h1>
-                    )
-                })
-            }
+            <h1 className="font-bold" >{name}</h1>
+           
+  
         </div>
 
        
