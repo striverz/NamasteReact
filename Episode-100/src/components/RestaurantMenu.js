@@ -4,6 +4,7 @@ import Contact from "./Contact";
 import { IMG_CDN, RESTAURANT_MENU_API } from "../utils/constants";
 import ShimmerUI from "./ShimmerUI";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import Accordion from "./Accordion";
 
 
 
@@ -11,35 +12,47 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 const RestaurantMenu=()=>{
 
     const {resId}=useParams();
-    
     const resData=useRestaurantMenu(resId);
-
-    
-
-    
 
     if(resData===null) return <ShimmerUI/>
 
-    const Data=resData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card?.itemCards;
-    const Data2=resData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-
-    
-
-    const ItemCategory=Data2.filter((res)=>res.card.card["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-    //console.log(ItemCategory);
-    
-    
-
+    //this is for showing the name and image of the restaurantMenu Card
     const {name,cloudinaryImageId}=resData?.cards[2]?.card?.card?.info;
-    //console.log(name); 
+
+
+    
+    const ResCategoery=resData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter((c)=>c?.card?.card["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+
+    
+    
+   
+    
+   
     return(
-        <div>
-            <h1 className="font-bold" >{name}</h1>
-           
-  
+       
+        <>
+        
+        <div className="card-m">
+        <img src={IMG_CDN+cloudinaryImageId}></img>
+        <h1>{name}</h1>
         </div>
 
+        <div>
+            {
+
+                ResCategoery.map((res,ind)=>
+                 <Accordion  key={ind} data={res?.card?.card}/> )
+                
+               
+            }
+        </div>
+    
+        </>
+    
+      
        
+       
+    
     )
 }
 export default RestaurantMenu;

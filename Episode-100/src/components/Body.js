@@ -1,11 +1,13 @@
 
 import RestaurantCard from "./RestaurantCard"
-import {useState,useEffect} from "react"
+import {useState,useEffect, useContext} from "react"
 import { RESTAURANT_API } from "../utils/constants"
 import ShimmerUI from "./ShimmerUI"
 import { Link } from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus"
 import Grocery from "./Grocery"
+import UserContext from "../utils/UserContext"
+
 
 
 
@@ -22,6 +24,11 @@ const Body=()=>{
 
     const [searchText, setSearchText]=useState("");
 
+   
+
+
+    
+
 
 
     
@@ -33,21 +40,28 @@ const Body=()=>{
     const fetchData= async()=>{
         const data =await fetch(RESTAURANT_API);
         const json=await data?.json();
+      
 
-        const Data=json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        const Data=json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        
         
       
        setRestaurants(Data);
        setFilteredRestaurants(Data);
+
+      
       
 
     }
     //again using condition rendering
     if(onlineStatus===false) return <h1>Look's like you are offline🚀 check you connection</h1>
 
+    const {loggedInUser,setUserName}=useContext(UserContext);
+    
     //Conditional Rendering :)
     return (restaurants?.length===0) ? <ShimmerUI/> :(
 
+        
      (
         <div className="body">
             <div className="search-function"> 
@@ -62,13 +76,13 @@ const Body=()=>{
                     <button
                     onClick={()=>{
 
-                        console.log("Hai");
+                        
                         
                         //The filtering logic :)
                         const filteredData=restaurants.filter((res)=>res?.info?.name?.toLowerCase()?.includes(searchText?.toLowerCase()));
 
                         setFilteredRestaurants(filteredData);
-                        console.log(filteredData);
+                       // console.log(filteredData);
 
 
                         
@@ -84,12 +98,21 @@ const Body=()=>{
                 }}>
                     Top Res
                 </button>
+                <div>
+                    <label>UserName: </label>
+                    <input className="context" value={loggedInUser} onChange={(e)=>{
+                        setUserName(e.target.value);
+                    }}></input>
+                </div>
             </div>
+            
             <div className="card-container">
                 {
+                   
+
 
                    
-                    filteredRestaurants.map((card)=>{
+                    filteredRestaurants?.map((card)=>{
                         return(
                             <Link to={"/restaurant/"+card.info.id} key={card.info.id}><RestaurantCard Card={card}/> </Link>
                         )

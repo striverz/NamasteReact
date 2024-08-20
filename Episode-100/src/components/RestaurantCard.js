@@ -1,5 +1,9 @@
 import { IMG_CDN } from "../utils/constants";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
+
 const RestaurantCard=(props)=>{
+    const {loggedInUser}=useContext(UserContext);
     const {Card} =props;
     return(
         <div className="res-card"> 
@@ -8,6 +12,7 @@ const RestaurantCard=(props)=>{
          <h6>{Card.info.cuisines.join(", ")}</h6>
          <h3>{Card.info.avgRating}</h3>
          <h4>{Card.info.locality}</h4>
+       
 
         </div>
     )

@@ -2,12 +2,22 @@ import { LOGO_IMG } from "../utils/constants";
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useContext } from "react";
+
+import UserContext from "../utils/UserContext";
 
 const Header=()=>{
 
     const [loginBtn,setLoginBtn]=useState("Login");
 
     const onlineStatus=useOnlineStatus();
+
+    const data=useContext(UserContext);
+    const {loggedInUser}=data;
+
+
+    
+    
 
    
 
@@ -41,6 +51,9 @@ const Header=()=>{
                      onClick={()=>{
                         (loginBtn==="Login") ? setLoginBtn("Logout") : setLoginBtn("Login");
                      }}>{loginBtn}</button>
+                     <li>
+                        {loggedInUser}
+                     </li>
                 </ul>
 
             </div>

@@ -1,9 +1,4 @@
 /* The Header Css is starts from Here...! */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .header{
     border: solid black 1px;
     display: flex;
@@ -100,12 +95,87 @@
 .toprating-btn{
     margin-left: 10px;
 }
-
-.accordian{
-    
-    padding: 20px;
-    margin: 5px;
-    border: solid black 1px;
-    cursor: pointer;
-    font-weight: 700;
+.card-menu{
+   display: flex;
+   justify-content: center;
+   padding: 3px;
 }
+.card-m{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-m>img{
+    width: 100%;
+    border-radius: 15px;
+}
+.accordion{
+   
+   padding: 10px;
+}
+.each-section{
+    font-weight: 600;
+    font-size: 30px;
+    border-bottom: solid 1px black;
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    
+}
+.nn{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+    padding: 10px;
+
+}
+.context{
+    padding: 5px;
+}
+
+.accordion{
+    border: solid red 1px;
+    margin: 20px;
+    
+}
+.accordion-section{
+    border: solid black 1px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 25px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    border-bottom: solid #202020 2px;
+    cursor: pointer;
+   
+}
+
+.img-acc{
+    width: 150px;
+    border-radius: 10px;
+   
+}
+
+.acc-body{
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+.section2>button{
+    position: absolute;
+}
+
