@@ -17,8 +17,6 @@ import Cart from "./components/Cart";
 const Grocery=React.lazy(()=> import("./components/Grocery"));
 
 
-
-
 const App=()=>{
 
     const [userName,setUserName]=useState("");
