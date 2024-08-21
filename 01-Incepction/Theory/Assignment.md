@@ -109,4 +109,4 @@ This attribute is useful for scripts that need the DOM to be fully loaded before
 ### best blog to explore 
 <a href="https://javascript.info/script-async-defer"></a>
 
-# 8. What is crossorigin in script tag?
+# 8. What is crossorigin in script tag in react?
