@@ -2,9 +2,11 @@ import { IMG_CDN } from "../utils/constants";
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
 
+
 const RestaurantCard=(props)=>{
     const {loggedInUser}=useContext(UserContext);
     const {Card} =props;
+    console.log(Card);
     return(
         <div className="res-card"> 
          <img src={IMG_CDN+Card.info.cloudinaryImageId}/>

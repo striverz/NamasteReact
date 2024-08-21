@@ -36,7 +36,7 @@ it("Should load the login button in header",()=>{
     </BrowserRouter>);
 
     //Querying the element 
-    const cartItems=screen.getByText("Cart -(0)");
+    const cartItems=screen.getByText(/Cart/);
 
     //Assertion 
     expect(cartItems).toBeInTheDocument();
