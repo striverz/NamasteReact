@@ -179,7 +179,6 @@ browserslist allows you to specify which browsers your project should support. T
 }
 
 ```
-
 Read about dif bundlers: vite, webpack, parcel
 
 ● Read about: ^ - caret and ~ - tilda
