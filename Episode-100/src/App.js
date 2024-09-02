@@ -14,7 +14,7 @@ import appStore from "./redux/appStore";
 import { Provider } from "react-redux";
 import Cart from "./components/Cart";
 
-//laxy loading in the reactjs
+//laxy loading in the reactjs is updated
 const Grocery=React.lazy(()=> import("./components/Grocery"));
 
 
