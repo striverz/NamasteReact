@@ -39,7 +39,8 @@ const Body=()=>{
 
     const fetchData= async()=>{
         const data =await fetch(RESTAURANT_API);
-        const json=await data?.json();
+        const json=await data.json();
+        // console.log(json);
       
 
         const Data=json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;

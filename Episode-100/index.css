@@ -194,3 +194,12 @@
     cursor: pointer;
 }
 
+.about{
+    width: 800px;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    border: solid black 1px;
+    justify-content: space-between;
+}
+
